@@ -1,0 +1,36 @@
+:root {
+    --color-red: #ce2129;
+    --color-blue: #07466a;
+    --color-gold: #bb7e26;
+    --color-black: #000000;
+
+    --color-espresso: #120b07;
+    --color-charcoal: #171412;
+    --color-cream: #f6efe5;
+    --color-soft-cream: #fffaf2;
+    --color-muted: #b9ada0;
+    --color-white: #ffffff;
+
+    --font-heading: "Crestwood Regular", "Playfair Display", Georgia, serif;
+    --font-body: "myriad-pro", Arial, sans-serif;
+    --font-accent: "trajan-pro-3", Georgia, serif;
+
+    --container: 1180px;
+    --section-padding: 7rem 1.5rem;
+
+    --radius-sm: 12px;
+    --radius-md: 22px;
+    --radius-lg: 34px;
+
+    --transition: 220ms ease;
+}
+
+@font-face {
+    font-family: "Crestwood Regular";
+
+    src: url("../assets/fonts/crestwood-regular.ttf") format("truetype");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
