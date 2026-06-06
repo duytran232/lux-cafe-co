@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CartDrawer from "./components/CartDrawer";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -14,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-
+      <ScrollToTop />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -24,7 +25,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-
       <CartDrawer />
       <Footer />
     </>

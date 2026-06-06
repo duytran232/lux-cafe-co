@@ -13,6 +13,7 @@ import "./styles/home.css";
 import "./styles/products.css";
 import "./styles/origin.css";
 import "./styles/wholesale.css";
+import "./styles/contact.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -408,6 +408,62 @@ const copy = {
         "Explore our 250g collection or start a conversation about future wholesale opportunities.",
       contactButton: "Contact Us",
     },
+
+    contact: {
+      heroEyebrow: "Contact Lux Café Co",
+      heroTitle: "Let’s start a conversation.",
+      heroBody:
+        "Reach out for retail questions, wholesale partnership interest, product availability, or future ordering opportunities.",
+      whatsapp: "Message us on WhatsApp",
+
+      inquiryEyebrow: "Inquiry Box",
+      inquiryTitle: "Tell us what you are looking for.",
+      inquiryBody:
+        "This simple inquiry area is designed for future contact form functionality. For now, it helps visitors understand what kind of message they can send.",
+      name: "Your name",
+      email: "Email address",
+      reason: "Reason for inquiry",
+      message: "Write your message...",
+      send: "Send Inquiry",
+
+      reasons: [
+        "Retail product question",
+        "Wholesale partnership",
+        "Product availability",
+        "General question",
+      ],
+
+      faqEyebrow: "Quick Answers",
+      faqTitle: "Frequently asked questions.",
+      faqs: [
+        {
+          question: "Can I ask about wholesale coffee?",
+          answer:
+            "Yes. Lux Café Co is prepared for wholesale conversations with cafés, retail stores, hospitality partners, and business buyers.",
+        },
+        {
+          question: "Is the website ready for e-commerce?",
+          answer:
+            "This prototype is structured with future ordering and e-commerce in mind, even if checkout is not fully built yet.",
+        },
+        {
+          question: "What products can customers ask about?",
+          answer:
+            "Customers can ask about Signature, Estate, Whisky, and Wine Coffee in the 250g collection.",
+        },
+        {
+          question: "Where is the brand identity inspired from?",
+          answer:
+            "Lux Café Co is rooted in Colombian origin, premium coffee culture, and warm shared moments.",
+        },
+      ],
+
+      finalEyebrow: "Stay Connected",
+      finalTitle: "Explore the collection while we prepare your next cup.",
+      finalBody:
+        "Discover the Lux Café Co 250g collection or contact us directly for business opportunities.",
+      finalButton: "View Collection",
+    },
   },
 
   ES: {
@@ -806,6 +862,62 @@ const copy = {
       ctaBody:
         "Explora nuestra colección de 250g o inicia una conversación sobre futuras oportunidades mayoristas.",
       contactButton: "Contáctanos",
+    },
+
+    contact: {
+      heroEyebrow: "Contacta Lux Café Co",
+      heroTitle: "Empecemos una conversación.",
+      heroBody:
+        "Contáctanos para preguntas retail, interés mayorista, disponibilidad de productos o futuras oportunidades de pedido.",
+      whatsapp: "Envíanos un mensaje por WhatsApp",
+
+      inquiryEyebrow: "Caja de consulta",
+      inquiryTitle: "Cuéntanos qué estás buscando.",
+      inquiryBody:
+        "Esta área está pensada para una futura función de formulario. Por ahora, ayuda al visitante a entender qué tipo de mensaje puede enviar.",
+      name: "Tu nombre",
+      email: "Correo electrónico",
+      reason: "Motivo de consulta",
+      message: "Escribe tu mensaje...",
+      send: "Enviar consulta",
+
+      reasons: [
+        "Pregunta sobre producto retail",
+        "Alianza mayorista",
+        "Disponibilidad de producto",
+        "Pregunta general",
+      ],
+
+      faqEyebrow: "Respuestas rápidas",
+      faqTitle: "Preguntas frecuentes.",
+      faqs: [
+        {
+          question: "¿Puedo preguntar sobre café mayorista?",
+          answer:
+            "Sí. Lux Café Co está preparado para conversaciones mayoristas con cafés, tiendas, socios de hospitalidad y compradores comerciales.",
+        },
+        {
+          question: "¿El sitio está listo para e-commerce?",
+          answer:
+            "Este prototipo está estructurado pensando en futuros pedidos y e-commerce, aunque el checkout todavía no esté completamente construido.",
+        },
+        {
+          question: "¿Sobre qué productos pueden preguntar los clientes?",
+          answer:
+            "Los clientes pueden preguntar sobre Signature, Estate, Whisky y Wine Coffee en la colección de 250g.",
+        },
+        {
+          question: "¿De dónde viene la identidad de la marca?",
+          answer:
+            "Lux Café Co está inspirado en el origen colombiano, la cultura cafetera premium y los momentos compartidos.",
+        },
+      ],
+
+      finalEyebrow: "Mantente conectado",
+      finalTitle: "Explora la colección mientras preparamos tu próxima taza.",
+      finalBody:
+        "Descubre la colección 250g de Lux Café Co o contáctanos directamente para oportunidades comerciales.",
+      finalButton: "Ver colección",
     },
   },
 };

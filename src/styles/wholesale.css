@@ -576,7 +576,7 @@
 
     .partner-ledger-card strong {
         font-size: clamp(3.5rem, 18vw, 5rem);
-      }
+    }
 
     .partner-film-card,
     .partner-film-card video {

@@ -665,6 +665,136 @@
     background: rgba(187, 126, 38, 0.28);
 }
 
+.brand-logo,
+.footer-logo-button {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.footer-logo-button {
+    color: inherit;
+    text-align: left;
+}
+
+.footer-contact {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.footer-contact>a {
+    color: var(--color-soft-cream);
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.86;
+    transition: color var(--transition), opacity var(--transition);
+}
+
+.footer-contact>a:hover {
+    color: #bb7e26;
+    opacity: 1;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer-socials a {
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    border: 1px solid rgba(187, 126, 38, 0.45);
+    background: rgba(255, 250, 242, 0.035);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition), border-color var(--transition),
+        background var(--transition);
+}
+
+.footer-socials a:hover {
+    transform: translateY(-4px);
+    border-color: #bb7e26;
+    background: rgba(187, 126, 38, 0.12);
+}
+
+.footer-socials img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.icon-action,
+.language-trigger,
+.cart-button,
+.account-button {
+    min-width: 58px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-trigger,
+.cart-button {
+    gap: 0.85rem;
+}
+
+.language-trigger::before,
+.cart-button::before {
+    content: "";
+    width: 1px;
+    height: 22px;
+    background: rgba(187, 126, 38, 0.55);
+    order: 2;
+}
+
+.language-trigger img,
+.cart-button img {
+    order: 1;
+}
+
+.language-trigger strong,
+.cart-button span {
+    order: 3;
+    margin: 0;
+}
+
+.account-button,
+.language-trigger,
+.cart-button {
+    border-radius: 999px;
+    border: 1px solid rgba(187, 126, 38, 0.52);
+    background: rgba(255, 250, 242, 0.035);
+}
+
+.account-button img,
+.language-trigger img,
+.cart-button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.cart-button span,
+.language-trigger strong {
+    min-width: 18px;
+    text-align: center;
+    color: var(--color-soft-cream);
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
 @media (max-width: 960px) {
     .mobile-menu .language-switcher {
         width: 100%;

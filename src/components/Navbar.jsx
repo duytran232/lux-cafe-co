@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Button from "./Button";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -41,18 +41,37 @@ function NavbarActions({ showExplore = false }) {
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { setIsCartOpen } = useCart();
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const closeMenu = () => setIsOpen(false);
+
+  const handleLogoClick = () => {
+    const hasTemporaryAction = isOpen;
+
+    if (hasTemporaryAction) {
+      const canLeave = window.confirm(
+        "You have an unfinished temporary action. Going back home will close it. Continue?"
+      );
+
+      if (!canLeave) return;
+    }
+
+    setIsOpen(false);
+    setIsCartOpen(false);
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
 
   return (
     <header className="site-header">
       <nav className={`navbar ${isOpen ? "menu-open" : ""}`}>
         <div className="nav-left">
-          <NavLink
-            to="/"
+          <button
             className="brand-logo"
-            onClick={closeMenu}
+            type="button"
+            onClick={handleLogoClick}
             aria-label="Lux Café Co home"
           >
             <img
@@ -60,12 +79,12 @@ function Navbar() {
               src="/images/logo.png"
               alt="Lux Café Co logo"
             />
-          </NavLink>
+          </button>
         </div>
 
         <div className="nav-center">
           {navItems.map((item) => (
-            <NavLink key={item.to} to={item.to}>
+            <NavLink key={item.to} to={item.to} onClick={closeMenu}>
               {t.nav[item.labelKey]}
             </NavLink>
           ))}
