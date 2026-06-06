@@ -9,30 +9,73 @@ function Wholesale() {
   return (
     <>
       <section className="wholesale-hero">
+        <div className="wholesale-hero-pattern" aria-hidden="true" />
+
         <div className="container wholesale-hero-grid">
           <Reveal variant="left">
-            <p className="eyebrow">{t.wholesale.heroEyebrow}</p>
+            <div className="wholesale-hero-copy">
+              <p className="eyebrow">{t.wholesale.heroEyebrow}</p>
 
-            <h1>
-              <TextReveal>{t.wholesale.heroTitle}</TextReveal>
-            </h1>
+              <h1>
+                <TextReveal>{t.wholesale.heroTitle}</TextReveal>
+              </h1>
 
-            <p>{t.wholesale.heroBody}</p>
+              <p>{t.wholesale.heroBody}</p>
 
-            <div className="hero-actions">
-              <Button to="/contact">{t.wholesale.primaryButton}</Button>
-              <Button to="/products" variant="secondary">
-                {t.wholesale.secondaryButton}
-              </Button>
+              <div className="hero-actions">
+                <Button to="/contact">{t.wholesale.primaryButton}</Button>
+                <Button to="/products" variant="secondary">
+                  {t.wholesale.secondaryButton}
+                </Button>
+              </div>
             </div>
           </Reveal>
 
-          <Reveal delay={0.15} variant="scale">
-            <div className="wholesale-hero-card">
-              <span>{t.wholesale.heroCardLabel}</span>
-              <strong>2.5kg</strong>
-              <p>{t.wholesale.heroCardText}</p>
-            </div>
+          <Reveal delay={0.15} variant="right">
+            <aside className="wholesale-hero-visual">
+              <div className="partner-ledger-card">
+                <div className="partner-ledger-main">
+                  <span>{t.wholesale.heroCardLabel}</span>
+                  <strong>2.5kg</strong>
+                  <p>{t.wholesale.heroCardText}</p>
+                </div>
+
+                <div className="partner-ledger-specs">
+                  <div>
+                    <small>Supply</small>
+                    <b>Consistent daily service</b>
+                  </div>
+
+                  <div>
+                    <small>Use Case</small>
+                    <b>Cafés, retail, hospitality</b>
+                  </div>
+
+                  <div>
+                    <small>Origin</small>
+                    <b>Colombian coffee identity</b>
+                  </div>
+                </div>
+              </div>
+
+              <div className="partner-film-card">
+                <video
+                  src="/videos/colombian-coffee-origin.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+
+                <div>
+                  <span>{t.wholesale.mediaVideoLabel || "Origin in Motion"}</span>
+                  <p>
+                    {t.wholesale.mediaVideoText ||
+                      "A cinematic look at the Colombian story behind Lux Café Co."}
+                  </p>
+                </div>
+              </div>
+            </aside>
           </Reveal>
         </div>
       </section>
@@ -40,31 +83,31 @@ function Wholesale() {
       <section className="section wholesale-overview">
         <div className="container wholesale-overview-grid">
           <Reveal variant="left">
-            <p className="eyebrow">{t.wholesale.overviewEyebrow}</p>
-            <h2 className="section-title">{t.wholesale.overviewTitle}</h2>
+            <div className="wholesale-overview-copy">
+              <p className="eyebrow">{t.wholesale.overviewEyebrow}</p>
+              <h2 className="section-title">{t.wholesale.overviewTitle}</h2>
+              <p className="section-copy">{t.wholesale.overviewBody}</p>
+            </div>
           </Reveal>
 
           <Reveal delay={0.15} variant="right">
-            <p className="section-copy">{t.wholesale.overviewBody}</p>
+            <div className="wholesale-snapshot">
+              {t.wholesale.stats.map((stat, index) => (
+                <div className="snapshot-row" key={stat.label}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{stat.value}</strong>
+                  <p>{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </Reveal>
-        </div>
-
-        <div className="container wholesale-stats">
-          {t.wholesale.stats.map((stat, index) => (
-            <Reveal key={stat.label} delay={index * 0.08} variant="scale">
-              <div className="wholesale-stat-card">
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-            </Reveal>
-          ))}
         </div>
       </section>
 
       <section className="section wholesale-partners">
         <div className="container">
           <Reveal>
-            <div className="wholesale-section-heading">
+            <div className="wholesale-section-heading centered">
               <p className="eyebrow">{t.wholesale.partnerEyebrow}</p>
               <h2 className="section-title">{t.wholesale.partnerTitle}</h2>
               <p className="section-copy">{t.wholesale.partnerBody}</p>
@@ -73,11 +116,7 @@ function Wholesale() {
 
           <div className="partner-grid">
             {t.wholesale.partners.map((partner, index) => (
-              <Reveal
-                key={partner.title}
-                delay={index * 0.08}
-                variant={index % 2 === 0 ? "left" : "right"}
-              >
+              <Reveal key={partner.title} delay={index * 0.08} variant="scale">
                 <article className="partner-card">
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{partner.title}</h3>
@@ -92,13 +131,15 @@ function Wholesale() {
       <section className="section wholesale-format">
         <div className="container wholesale-format-grid">
           <Reveal variant="left">
-            <div className="format-visual">
-              <img
-                src="/images/products/signature_collection.png"
-                alt="Lux Café Co wholesale coffee product"
-              />
+            <div className="format-showcase">
+              <div className="format-product-frame">
+                <img
+                  src="/images/products/signature_collection.png"
+                  alt="Lux Café Co wholesale coffee product"
+                />
+              </div>
 
-              <div className="format-badge">
+              <div className="format-product-meta">
                 <span>{t.wholesale.formatBadge}</span>
                 <strong>2.5kg</strong>
               </div>
@@ -106,26 +147,28 @@ function Wholesale() {
           </Reveal>
 
           <Reveal delay={0.15} variant="right">
-            <p className="eyebrow">{t.wholesale.formatEyebrow}</p>
-            <h2 className="section-title">{t.wholesale.formatTitle}</h2>
-            <p className="section-copy">{t.wholesale.formatBody}</p>
+            <div className="format-copy-panel">
+              <p className="eyebrow">{t.wholesale.formatEyebrow}</p>
+              <h2 className="section-title">{t.wholesale.formatTitle}</h2>
+              <p className="section-copy">{t.wholesale.formatBody}</p>
 
-            <div className="format-list">
-              {t.wholesale.formatPoints.map((point) => (
-                <div key={point.title}>
-                  <strong>{point.title}</strong>
-                  <span>{point.body}</span>
-                </div>
-              ))}
+              <div className="format-list">
+                {t.wholesale.formatPoints.map((point) => (
+                  <div key={point.title}>
+                    <strong>{point.title}</strong>
+                    <span>{point.body}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
       </section>
 
       <section className="section wholesale-process">
-        <div className="container">
-          <Reveal>
-            <div className="wholesale-section-heading">
+        <div className="container wholesale-process-grid">
+          <Reveal variant="left">
+            <div className="process-sticky-copy">
               <p className="eyebrow">{t.wholesale.processEyebrow}</p>
               <h2 className="section-title">{t.wholesale.processTitle}</h2>
             </div>
@@ -133,7 +176,7 @@ function Wholesale() {
 
           <div className="process-timeline">
             {t.wholesale.process.map((step, index) => (
-              <Reveal key={step.title} delay={index * 0.08}>
+              <Reveal key={step.title} delay={index * 0.08} variant="right">
                 <div className="process-step">
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <div>

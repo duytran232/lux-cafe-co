@@ -53,23 +53,39 @@ const copy = {
       title: "Selected Collection",
       empty: "Your cart is currently empty.",
     },
-
     home: {
       heroEyebrow: "Lux Café Co",
       heroTitle: "Colombian coffee, crafted for modern luxury.",
+      heroBody:
+        "A premium coffee experience inspired by Colombian origin, elegant rituals, and everyday moments worth slowing down for.",
       explore: "Explore 250g Collection",
       discover: "Discover Our Origin",
 
       productEyebrow: "250g Collection",
       productTitle: "Four expressions of craft.",
+      productBody:
+        "Each 250g format is designed with a distinct personality, from everyday smoothness to bold aroma-led profiles.",
 
       originEyebrow: "Colombian Origin Story",
       originTitleStart: "From",
       originTitleCountry: "Colombia",
       originTitleEnd: "with aroma.",
-      harvest: "Harvest",
-      roast: "Roast",
-      ritual: "Ritual",
+      originBody:
+        "Lux Café Co celebrates Colombian coffee culture through careful sourcing, warm visual identity, and a refined modern presentation.",
+      originPoints: [
+        {
+          title: "Harvest",
+          body: "Selected beans begin with attention to ripeness, climate, and quality.",
+        },
+        {
+          title: "Roast",
+          body: "Aroma, depth, and balance guide every roast profile.",
+        },
+        {
+          title: "Ritual",
+          body: "Created for quiet mornings, shared tables, and premium daily moments.",
+        },
+      ],
       originFilm: "Origin Film",
       originFilmText: "Colombian coffee culture, captured through motion.",
 
@@ -79,55 +95,89 @@ const copy = {
       wholesaleTitleEnd: "coffee for partners.",
       wholesaleFormat: "Wholesale Format",
       wholesaleSupply: "Premium Colombian coffee supply",
+      wholesaleBody:
+        "Future 2.5kg wholesale formats are prepared for cafés, hospitality partners, and businesses looking for a refined Colombian coffee option.",
       wholesaleButton: "Explore Wholesale",
 
       contactEyebrow: "Contact",
       contactTitle: "Ready to bring our products to your next moment?",
+      contactBody:
+        "Start a conversation about retail products, wholesale interest, or future ordering opportunities.",
       contactButton: "Contact Lux Café Co",
     },
 
     products: {
       heroEyebrow: "The 250g Collection",
       heroTitle: "Premium coffee, crafted for refined rituals.",
+      heroBody:
+        "Explore four 250g expressions designed for different moods, aromas, and coffee moments.",
       startInquiry: "Start an Inquiry",
       discoverOrigin: "Discover Origin",
 
       lineupEyebrow: "Product Lineup",
       lineupTitle: "Explore the collection.",
+      lineupBody:
+        "Each product keeps the Lux Café Co identity consistent while offering a different flavour direction and visual personality.",
 
       collection: "Collection",
       format: "Format",
       profile: "Profile",
-      profileValue: "Lorem Ipsum",
 
       viewCollection: "View Collection",
       addToCart: "Add to Cart",
 
       orderingEyebrow: "Ordering Options",
       orderingTitle: "Choose your way to enjoy Lux Café Co.",
-      option1: "Retail collection inquiry",
-      option2: "Local pickup preparation",
-      option3: "Delivery-ready future checkout",
+      orderingBody:
+        "This prototype presents future purchase paths clearly, including inquiry, pickup, and delivery-ready checkout planning.",
+      options: [
+        {
+          title: "Retail collection inquiry",
+          body: "Customers can contact Lux Café Co to ask about current product availability.",
+        },
+        {
+          title: "Local pickup preparation",
+          body: "Pickup content is structured for a future local ordering workflow.",
+        },
+        {
+          title: "Delivery-ready future checkout",
+          body: "The layout leaves space for a full checkout system later.",
+        },
+      ],
 
-      names: {
-        signature: "Signature Coffee",
-        estate: "Estate Coffee",
-        whisky: "Whisky Coffee",
-        wine: "Wine Coffee",
-      },
-
-      tags: {
-        everyday: "Everyday Luxury",
-        origin: "Origin Focused",
-        bold: "Bold Expression",
-        aroma: "Distinctive Aroma",
-      },
-
-      collections: {
-        signature: "Signature Collection",
-        estate: "Estate Collection",
-        whisky: "Whisky Collection",
-        wine: "Wine Collection",
+      items: {
+        signature: {
+          name: "Signature Coffee",
+          tag: "Everyday Luxury",
+          collection: "Signature Collection",
+          profile: "Smooth, balanced, elegant",
+          description:
+            "A refined everyday coffee with a smooth body, warm aroma, and a polished finish.",
+        },
+        estate: {
+          name: "Estate Coffee",
+          tag: "Origin Focused",
+          collection: "Estate Collection",
+          profile: "Bright, clean, origin-led",
+          description:
+            "A Colombian origin-forward profile created to highlight clarity, freshness, and regional character.",
+        },
+        whisky: {
+          name: "Whisky Coffee",
+          tag: "Bold Expression",
+          collection: "Whisky Collection",
+          profile: "Deep, rich, memorable",
+          description:
+            "A stronger expression with deeper notes, designed for customers who enjoy a bolder cup.",
+        },
+        wine: {
+          name: "Wine Coffee",
+          tag: "Distinctive Aroma",
+          collection: "Wine Collection",
+          profile: "Aromatic, soft, unique",
+          description:
+            "A more expressive coffee profile with a distinctive aroma and smooth premium character.",
+        },
       },
     },
 
@@ -408,19 +458,36 @@ const copy = {
     home: {
       heroEyebrow: "Lux Café Co",
       heroTitle: "Café colombiano, creado para el lujo moderno.",
+      heroBody:
+        "Una experiencia de café premium inspirada en el origen colombiano, rituales elegantes y momentos diarios que merecen disfrutarse con calma.",
       explore: "Explorar colección 250g",
       discover: "Descubrir nuestro origen",
 
       productEyebrow: "Colección 250g",
       productTitle: "Cuatro expresiones de artesanía.",
+      productBody:
+        "Cada formato de 250g tiene una personalidad distinta, desde suavidad diaria hasta perfiles intensos y aromáticos.",
 
       originEyebrow: "Historia de origen colombiano",
       originTitleStart: "Desde",
       originTitleCountry: "Colombia",
       originTitleEnd: "con aroma.",
-      harvest: "Cosecha",
-      roast: "Tostado",
-      ritual: "Ritual",
+      originBody:
+        "Lux Café Co celebra la cultura cafetera colombiana mediante selección cuidadosa, identidad visual cálida y una presentación moderna refinada.",
+      originPoints: [
+        {
+          title: "Cosecha",
+          body: "Los granos seleccionados comienzan con atención a madurez, clima y calidad.",
+        },
+        {
+          title: "Tostado",
+          body: "El aroma, la profundidad y el equilibrio guían cada perfil de tostado.",
+        },
+        {
+          title: "Ritual",
+          body: "Creado para mañanas tranquilas, mesas compartidas y momentos diarios premium.",
+        },
+      ],
       originFilm: "Película de origen",
       originFilmText: "La cultura del café colombiano capturada en movimiento.",
 
@@ -430,55 +497,89 @@ const copy = {
       wholesaleTitleEnd: "premium para socios.",
       wholesaleFormat: "Formato mayorista",
       wholesaleSupply: "Suministro premium de café colombiano",
+      wholesaleBody:
+        "Los futuros formatos mayoristas de 2.5kg están pensados para cafés, socios de hospitalidad y negocios que buscan una opción colombiana refinada.",
       wholesaleButton: "Explorar mayorista",
 
       contactEyebrow: "Contacto",
       contactTitle: "¿Listo para llevar nuestros productos a tu próximo momento?",
+      contactBody:
+        "Inicia una conversación sobre productos retail, interés mayorista o futuras opciones de pedido.",
       contactButton: "Contactar Lux Café Co",
     },
 
     products: {
       heroEyebrow: "Colección 250g",
       heroTitle: "Café premium, creado para rituales refinados.",
+      heroBody:
+        "Explora cuatro expresiones de 250g diseñadas para diferentes momentos, aromas y estilos de café.",
       startInquiry: "Iniciar consulta",
       discoverOrigin: "Descubrir origen",
 
       lineupEyebrow: "Línea de productos",
       lineupTitle: "Explora la colección.",
+      lineupBody:
+        "Cada producto mantiene la identidad de Lux Café Co, pero ofrece una dirección de sabor y personalidad visual diferente.",
 
       collection: "Colección",
       format: "Formato",
       profile: "Perfil",
-      profileValue: "Texto temporal",
 
       viewCollection: "Ver colección",
       addToCart: "Agregar al carrito",
 
       orderingEyebrow: "Opciones de pedido",
       orderingTitle: "Elige cómo disfrutar Lux Café Co.",
-      option1: "Consulta de colección retail",
-      option2: "Preparación para recogida local",
-      option3: "Entrega preparada para futuro checkout",
+      orderingBody:
+        "Este prototipo presenta caminos futuros de compra, incluyendo consulta, recogida local y checkout preparado para entrega.",
+      options: [
+        {
+          title: "Consulta de colección retail",
+          body: "Los clientes pueden contactar a Lux Café Co para preguntar por la disponibilidad actual.",
+        },
+        {
+          title: "Preparación para recogida local",
+          body: "El contenido de recogida está estructurado para un futuro flujo de pedido local.",
+        },
+        {
+          title: "Checkout preparado para entrega",
+          body: "El layout deja espacio para un sistema completo de checkout más adelante.",
+        },
+      ],
 
-      names: {
-        signature: "Café Signature",
-        estate: "Café Estate",
-        whisky: "Café Whisky",
-        wine: "Café Wine",
-      },
-
-      tags: {
-        everyday: "Lujo diario",
-        origin: "Enfoque de origen",
-        bold: "Expresión intensa",
-        aroma: "Aroma distintivo",
-      },
-
-      collections: {
-        signature: "Colección Signature",
-        estate: "Colección Estate",
-        whisky: "Colección Whisky",
-        wine: "Colección Wine",
+      items: {
+        signature: {
+          name: "Café Signature",
+          tag: "Lujo diario",
+          collection: "Colección Signature",
+          profile: "Suave, balanceado, elegante",
+          description:
+            "Un café diario refinado con cuerpo suave, aroma cálido y final pulido.",
+        },
+        estate: {
+          name: "Café Estate",
+          tag: "Enfoque de origen",
+          collection: "Colección Estate",
+          profile: "Brillante, limpio, de origen",
+          description:
+            "Un perfil colombiano enfocado en claridad, frescura y carácter regional.",
+        },
+        whisky: {
+          name: "Café Whisky",
+          tag: "Expresión intensa",
+          collection: "Colección Whisky",
+          profile: "Profundo, rico, memorable",
+          description:
+            "Una expresión más fuerte con notas profundas para quienes disfrutan una taza intensa.",
+        },
+        wine: {
+          name: "Café Wine",
+          tag: "Aroma distintivo",
+          collection: "Colección Wine",
+          profile: "Aromático, suave, único",
+          description:
+            "Un perfil más expresivo con aroma distintivo y carácter premium suave.",
+        },
       },
     },
 
