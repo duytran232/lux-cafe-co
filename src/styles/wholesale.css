@@ -1,0 +1,364 @@
+.wholesale-hero {
+    min-height: 100vh;
+    padding: 10rem 1.5rem 6rem;
+    display: grid;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 22%, rgba(187, 126, 38, 0.18), transparent 28%),
+        radial-gradient(circle at 12% 78%, rgba(7, 70, 106, 0.22), transparent 32%),
+        linear-gradient(135deg, #070403, var(--color-espresso));
+}
+
+.wholesale-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 190px;
+    background: linear-gradient(transparent, #0b0705);
+    pointer-events: none;
+}
+
+.wholesale-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.wholesale-hero h1 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    margin: 1rem 0 1.4rem;
+    max-width: 900px;
+}
+
+.wholesale-hero p {
+    color: var(--color-muted);
+    line-height: 1.85;
+    max-width: 650px;
+}
+
+.wholesale-hero-card {
+    min-height: 520px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(187, 126, 38, 0.34);
+    background:
+        linear-gradient(145deg, rgba(255, 250, 242, 0.075), rgba(255, 250, 242, 0.025)),
+        radial-gradient(circle at center, rgba(187, 126, 38, 0.18), transparent 38%);
+    box-shadow:
+        0 40px 110px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 250, 242, 0.08);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.wholesale-hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 1.25rem;
+    border: 1px solid rgba(255, 250, 242, 0.11);
+    border-radius: calc(var(--radius-lg) - 14px);
+}
+
+.wholesale-hero-card::after {
+    content: "";
+    position: absolute;
+    width: 64%;
+    height: 2px;
+    bottom: 4.5rem;
+    background: linear-gradient(90deg, var(--color-red), var(--color-gold), var(--color-blue));
+    border-radius: 999px;
+}
+
+.wholesale-hero-card span {
+    color: var(--color-gold);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.wholesale-hero-card strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 10vw, 9rem);
+    font-weight: 400;
+    line-height: 0.9;
+    margin: 1rem 0;
+}
+
+.wholesale-hero-card p {
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+.wholesale-overview {
+    background:
+        radial-gradient(circle at top right, rgba(187, 126, 38, 0.1), transparent 28%),
+        linear-gradient(180deg, #0b0705, var(--color-espresso));
+}
+
+.wholesale-overview-grid,
+.wholesale-format-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.wholesale-stats {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.wholesale-stat-card,
+.partner-card,
+.process-step,
+.wholesale-cta-panel {
+    border: 1px solid rgba(187, 126, 38, 0.22);
+    background: linear-gradient(145deg, rgba(255, 250, 242, 0.065), rgba(255, 250, 242, 0.025));
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+}
+
+.wholesale-stat-card {
+    border-radius: var(--radius-md);
+    padding: 2rem;
+}
+
+.wholesale-stat-card strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    font-weight: 400;
+    color: var(--color-soft-cream);
+}
+
+.wholesale-stat-card span {
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+.wholesale-partners {
+    background:
+        radial-gradient(circle at 12% 22%, rgba(206, 33, 41, 0.08), transparent 26%),
+        linear-gradient(180deg, var(--color-espresso), #0b0705);
+}
+
+.wholesale-section-heading {
+    max-width: 780px;
+    margin-bottom: 3.5rem;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.partner-card {
+    min-height: 310px;
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(187, 126, 38, 0.52);
+    background: linear-gradient(145deg, rgba(187, 126, 38, 0.12), rgba(255, 250, 242, 0.035));
+}
+
+.partner-card span,
+.process-step span {
+    color: var(--color-gold);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.partner-card h3,
+.process-step h3,
+.format-list strong {
+    font-family: var(--font-accent);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.3rem 0 0.8rem;
+}
+
+.partner-card p,
+.process-step p,
+.format-list span {
+    color: var(--color-muted);
+    line-height: 1.75;
+}
+
+.wholesale-format {
+    background:
+        radial-gradient(circle at 80% 80%, rgba(7, 70, 106, 0.16), transparent 30%),
+        linear-gradient(180deg, #0b0705, var(--color-espresso));
+}
+
+.format-visual {
+    min-height: 560px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(187, 126, 38, 0.28);
+    background:
+        radial-gradient(circle at center, rgba(187, 126, 38, 0.18), transparent 38%),
+        linear-gradient(145deg, rgba(255, 250, 242, 0.055), rgba(0, 0, 0, 0.16));
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.format-visual img {
+    width: min(74%, 390px);
+    filter: drop-shadow(0 34px 44px rgba(0, 0, 0, 0.55));
+    animation: wholesaleFloat 5.5s ease-in-out infinite;
+}
+
+@keyframes wholesaleFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(1deg);
+    }
+}
+
+.format-badge {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.2rem;
+    background: rgba(18, 11, 7, 0.82);
+    border: 1px solid rgba(187, 126, 38, 0.32);
+    backdrop-filter: blur(14px);
+}
+
+.format-badge span {
+    display: block;
+    color: var(--color-gold);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.format-badge strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+.format-list {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.format-list div {
+    padding: 1.15rem 0;
+    border-bottom: 1px solid rgba(255, 250, 242, 0.1);
+}
+
+.format-list strong,
+.format-list span {
+    display: block;
+}
+
+.wholesale-process {
+    background:
+        radial-gradient(circle at top left, rgba(187, 126, 38, 0.1), transparent 28%),
+        linear-gradient(180deg, var(--color-espresso), #0b0705);
+}
+
+.process-timeline {
+    display: grid;
+    gap: 1rem;
+}
+
+.process-step {
+    border-radius: var(--radius-md);
+    padding: 1.6rem;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.process-step h3 {
+    margin-top: 0;
+}
+
+.process-step p {
+    margin: 0;
+    max-width: 760px;
+}
+
+.wholesale-cta {
+    background:
+        radial-gradient(circle at center, rgba(187, 126, 38, 0.14), transparent 38%),
+        linear-gradient(180deg, #0b0705, #070403);
+}
+
+.wholesale-cta-panel {
+    border-radius: var(--radius-lg);
+    padding: clamp(3rem, 7vw, 6rem);
+    text-align: center;
+}
+
+.wholesale-cta-panel .section-title,
+.wholesale-cta-panel .section-copy {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 980px) {
+    .wholesale-hero-grid,
+    .wholesale-overview-grid,
+    .wholesale-format-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wholesale-hero-card,
+    .format-visual {
+        min-height: 430px;
+    }
+
+    .wholesale-stats,
+    .partner-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .wholesale-hero {
+        padding-top: 8rem;
+    }
+
+    .process-step {
+        grid-template-columns: 1fr;
+    }
+
+    .wholesale-stat-card,
+    .partner-card {
+        padding: 1.5rem;
+    }
+}

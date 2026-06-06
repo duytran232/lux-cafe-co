@@ -1,13 +1,49 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import Button from "./Button";
+import LanguageSwitcher from "./LanguageSwitcher";
+import AuthModal from "./AuthModal";
+import { useCart } from "../context/useCart";
+import { useLanguage } from "../context/useLanguage";
+
+const navItems = [
+  { to: "/", labelKey: "home" },
+  { to: "/products", labelKey: "collection" },
+  { to: "/about", labelKey: "origin" },
+  { to: "/wholesale", labelKey: "wholesale" },
+  { to: "/contact", labelKey: "contact" },
+];
+
+function NavbarActions({ showExplore = false }) {
+  const { cartCount, setIsCartOpen } = useCart();
+  const { t } = useLanguage();
+
+  return (
+    <div className="nav-actions">
+      <AuthModal />
+      <LanguageSwitcher />
+
+      <button
+        className="cart-button icon-action"
+        type="button"
+        onClick={() => setIsCartOpen(true)}
+        aria-label="Open cart"
+      >
+        <img src="/icons/cart.svg" alt="" />
+        <span>{cartCount}</span>
+      </button>
+
+      {showExplore && <Button to="/products">{t.nav.explore}</Button>}
+    </div>
+  );
+}
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className="site-header">
@@ -16,61 +52,49 @@ function Navbar() {
           <NavLink
             to="/"
             className="brand-logo"
-            aria-label="Lux Café Co home"
             onClick={closeMenu}
+            aria-label="Lux Café Co home"
           >
-            <div className="logo-mark">L</div>
+            <img
+              className="brand-logo-img"
+              src="/images/logo.png"
+              alt="Lux Café Co logo"
+            />
           </NavLink>
         </div>
 
         <div className="nav-center">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Collection</NavLink>
-          <NavLink to="/about">Origin</NavLink>
-          <NavLink to="/wholesale">Wholesale</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          {navItems.map((item) => (
+            <NavLink key={item.to} to={item.to}>
+              {t.nav[item.labelKey]}
+            </NavLink>
+          ))}
         </div>
 
         <div className="nav-right">
-          <Button to="/products">Explore Coffee</Button>
+          <NavbarActions showExplore />
         </div>
 
         <button
           className="menu-toggle"
           type="button"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((current) => !current)}
+          aria-label="Toggle menu"
         >
           <span />
           <span />
-          <small>Menu</small>
+          <small>{t.nav.menu}</small>
         </button>
 
         <div className="mobile-menu">
-          <NavLink to="/" onClick={closeMenu}>
-            <span>01</span> Home
-          </NavLink>
-          <NavLink to="/products" onClick={closeMenu}>
-            <span>02</span> Collection
-          </NavLink>
-          <NavLink to="/about" onClick={closeMenu}>
-            <span>03</span> Origin
-          </NavLink>
-          <NavLink to="/wholesale" onClick={closeMenu}>
-            <span>04</span> Wholesale
-          </NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>
-            <span>05</span> Contact
-          </NavLink>
+          {navItems.map((item, index) => (
+            <NavLink key={item.to} to={item.to} onClick={closeMenu}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {t.nav[item.labelKey]}
+            </NavLink>
+          ))}
 
-          <div className="mobile-menu-divider">
-            <i />
-            <i />
-            <i />
-          </div>
-
-          <Button to="/products">Explore Coffee</Button>
+          <NavbarActions />
         </div>
       </nav>
     </header>
