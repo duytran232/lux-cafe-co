@@ -101,8 +101,8 @@ function Navbar() {
           aria-label="Toggle menu"
         >
           <span />
-          <span />
-          <small>{t.nav.menu}</small>
+<span />
+<span />
         </button>
 
         <div className="mobile-menu">

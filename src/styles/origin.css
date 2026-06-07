@@ -605,7 +605,7 @@
     z-index: 1;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 960px) {
 
     .origin-hero-grid,
     .origin-intro-grid,
@@ -667,7 +667,24 @@
     }
 }
 
-@media (max-width: 560px) {
+@media (min-width: 921px) and (max-width: 1200px) {
+    .origin-hero-content h1 {
+        font-size: clamp(4.3rem, 7vw, 6.4rem);
+    }
+
+    .origin-intro-grid,
+    .origin-culture-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 2rem;
+    }
+
+    .origin-journey-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
     .origin-hero {
         padding-top: 7rem;
     }

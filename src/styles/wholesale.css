@@ -539,6 +539,24 @@
     margin-right: auto;
 }
 
+@media (min-width: 1081px) and (max-width: 1200px) {
+    .wholesale-hero-grid,
+    .wholesale-overview-grid,
+    .wholesale-format-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 2rem;
+    }
+
+    .wholesale-hero-copy h1 {
+        font-size: clamp(4rem, 6.5vw, 5.8rem);
+    }
+
+    .partner-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
 @media (max-width: 1080px) {
 
     .wholesale-hero-grid,

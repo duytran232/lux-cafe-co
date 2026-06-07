@@ -104,9 +104,9 @@ function Contact() {
                 className="founder-country-link"
                 aria-label="Canada and Colombia connection"
               >
-                <span className="country-pill">Canada</span>
+                <img src="/icons/canada-flag.png" alt="Canada flag" />
                 <span className="country-divider" />
-                <span className="country-pill">Colombia</span>
+                <img src="/icons/colombia-flag.png" alt="Colombia flag" />
               </div>
             </div>
           </Reveal>

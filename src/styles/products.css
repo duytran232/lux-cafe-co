@@ -420,6 +420,26 @@
     }
 }
 
+@media (min-width: 961px) and (max-width: 1200px) {
+    .products-hero-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 2rem;
+    }
+
+    .products-hero-copy h1 {
+        font-size: clamp(4.2rem, 7vw, 6rem);
+    }
+
+    .product-showcase {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ordering-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
 @media (max-width: 640px) {
     .collection-hero {
         min-height: auto;
