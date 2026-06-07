@@ -1,6 +1,5 @@
-import { createContext, useEffect, useMemo, useState } from "react";
-
-export const CartContext = createContext();
+import { useEffect, useMemo, useState } from "react";
+import { CartContext } from "./CartContextBase";
 
 function getStoredCart() {
   try {

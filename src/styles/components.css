@@ -3,7 +3,6 @@
     top: 1rem;
     left: 0;
     width: 100%;
-    z-index: 100;
     padding: 0 1.5rem;
 }
 
@@ -438,17 +437,6 @@
     letter-spacing: 0.12em;
 }
 
-.language-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 300;
-    display: grid;
-    place-items: center;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.72);
-    backdrop-filter: blur(12px);
-}
-
 .language-modal-card {
     width: min(100%, 460px);
     position: relative;
@@ -541,15 +529,14 @@
     color: #BB7E26;
 }
 
-.auth-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 320;
-    display: grid;
-    place-items: center;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.72);
-    backdrop-filter: blur(12px);
+.auth-card,
+.language-modal-card {
+    position: relative;
+    z-index: 100000;
+}
+
+.cart-drawer {
+    z-index: 9999;
 }
 
 .auth-card {
@@ -793,6 +780,157 @@
     color: var(--color-soft-cream);
     font-size: 0.88rem;
     font-weight: 800;
+}
+
+.auth-modal,
+.language-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header {
+    z-index: 900;
+}
+
+.cart-clear {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(187, 126, 38, 0.42);
+    background: rgba(255, 250, 242, 0.035);
+    color: var(--color-soft-cream);
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        color var(--transition);
+}
+
+.cart-clear:hover {
+    transform: translateY(-2px);
+    border-color: #bb7e26;
+    background: rgba(187, 126, 38, 0.12);
+    color: #bb7e26;
+}
+
+/* ===== Final Modal / Cart Overlay System ===== */
+
+.site-header {
+    z-index: 900;
+}
+
+.auth-modal,
+.language-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: grid;
+    place-items: center;
+
+    padding: 1.5rem;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+
+    isolation: isolate;
+}
+
+.auth-modal::before,
+.language-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(187, 126, 38, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 80%, rgba(7, 70, 106, 0.18), transparent 38%);
+
+    pointer-events: none;
+}
+
+.auth-card,
+.language-modal-card {
+    position: relative;
+    z-index: 100000;
+
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+}
+
+.cart-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    background: rgba(0, 0, 0, 0);
+
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+
+    transition:
+        opacity 320ms ease,
+        background 320ms ease,
+        backdrop-filter 320ms ease;
+}
+
+.cart-backdrop-open {
+    opacity: 1;
+    pointer-events: auto;
+
+    background: rgba(0, 0, 0, 0.62);
+
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+.cart-drawer {
+    z-index: 9999;
+}
+
+.centered-actions {
+    justify-content: center;
+}
+
+@media (max-width: 960px) {
+
+    .auth-modal,
+    .language-modal {
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.72);
+
+        backdrop-filter: blur(24px) saturate(125%);
+        -webkit-backdrop-filter: blur(24px) saturate(125%);
+    }
+
+    .auth-card,
+    .language-modal-card {
+        width: min(100%, 440px);
+        max-height: calc(100vh - 2rem);
+    }
+
+    .cart-backdrop-open {
+        background: rgba(0, 0, 0, 0.68);
+
+        backdrop-filter: blur(22px) saturate(125%);
+        -webkit-backdrop-filter: blur(22px) saturate(125%);
+    }
 }
 
 @media (max-width: 960px) {

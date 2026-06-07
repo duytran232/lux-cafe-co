@@ -3,8 +3,15 @@ import Reveal from "../components/Reveal";
 import TextReveal from "../components/TextReveal";
 import { useLanguage } from "../context/useLanguage";
 
+const contactLinks = {
+  email: "mailto:luxcafecanada@hotmail.com",
+  whatsapp: "https://wa.me/15875788280",
+  instagram: "https://www.instagram.com/luxcafeco/",
+};
+
 function Contact() {
   const { t } = useLanguage();
+  const { founder } = t.contact;
 
   return (
     <>
@@ -27,17 +34,17 @@ function Contact() {
               <p>{t.contact.heroBody}</p>
 
               <div className="contact-info-list">
-                <a href="mailto:luxcafecanada@hotmail.com">
+                <a href={contactLinks.email}>
                   <span>Email</span>
                   luxcafecanada@hotmail.com
                 </a>
 
-                <a href="https://wa.me/YOURNUMBERHERE" target="_blank" rel="noreferrer">
+                <a href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
                   <span>WhatsApp</span>
                   {t.contact.whatsapp}
                 </a>
 
-                <a href="#" target="_blank" rel="noreferrer">
+                <a href={contactLinks.instagram} target="_blank" rel="noreferrer">
                   <span>Instagram</span>
                   @luxcafeco
                 </a>
@@ -68,6 +75,7 @@ function Contact() {
                 <option value="" disabled>
                   {t.contact.reason}
                 </option>
+
                 {t.contact.reasons.map((reason) => (
                   <option key={reason}>{reason}</option>
                 ))}
@@ -79,6 +87,48 @@ function Contact() {
                 {t.contact.send}
               </button>
             </form>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section contact-founder">
+        <div className="contact-founder-inner">
+          <Reveal variant="left">
+            <div className="founder-card">
+              <span>{founder.eyebrow}</span>
+              <h2>{founder.name}</h2>
+              <p className="founder-location">{founder.role}</p>
+              <p>{founder.cardBody}</p>
+
+              <div
+                className="founder-country-link"
+                aria-label="Canada and Colombia connection"
+              >
+                <span className="country-pill">Canada</span>
+                <span className="country-divider" />
+                <span className="country-pill">Colombia</span>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15} variant="right">
+            <div className="founder-story">
+              <p className="eyebrow">{founder.messageEyebrow}</p>
+              <h3>{founder.messageTitle}</h3>
+
+              {founder.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+
+              <div className="founder-highlights">
+                {founder.highlights.map((highlight) => (
+                  <div key={highlight.label}>
+                    <strong>{highlight.label}</strong>
+                    <span>{highlight.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -113,7 +163,7 @@ function Contact() {
             <h2 className="section-title">{t.contact.finalTitle}</h2>
             <p className="section-copy">{t.contact.finalBody}</p>
 
-            <div className="hero-actions" style={{ justifyContent: "center" }}>
+            <div className="hero-actions centered-actions">
               <Button to="/products">{t.contact.finalButton}</Button>
             </div>
           </Reveal>

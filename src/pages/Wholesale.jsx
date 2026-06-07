@@ -68,10 +68,9 @@ function Wholesale() {
                 />
 
                 <div>
-                  <span>{t.wholesale.mediaVideoLabel || "Origin in Motion"}</span>
+                  <span>{t.wholesale.mediaVideoLabel}</span>
                   <p>
-                    {t.wholesale.mediaVideoText ||
-                      "A cinematic look at the Colombian story behind Lux Café Co."}
+                    {t.wholesale.mediaVideoText}
                   </p>
                 </div>
               </div>
